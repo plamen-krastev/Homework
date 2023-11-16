@@ -18,6 +18,7 @@ function addAndSubtract (arr) {
       sumResult += odd;
     }
   }
+  
   console.log(result);
   console.log(sumArr);
   console.log(sumResult);
