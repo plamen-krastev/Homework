@@ -1,19 +1,19 @@
-function solve (n1, n2, n3) {
+function solve(n1, n2, n3) {
 
-  function sum (a, b) {
-    let sumResult = a + b;
-    return sumResult;
-  }
+    function sum(a, b) {
+        let sumResult = a + b;
+        return sumResult;
+    }
 
-  function substract (a, b) {
-    let substractResult = a - b;
-    return substractResult;
-  }
+    function substract(a, b) {
+        let substractResult = a - b;
+        return substractResult;
+    }
 
-  let resultSum = sum (n1, n2);
-  let resultSubstract = substract (resultSum, n3);
-  
-  console.log(resultSubstract);
+    let resultSum = sum(n1, n2);
+    let resultSubstract = substract(resultSum, n3);
+
+    console.log(resultSubstract);
 
 }
 
