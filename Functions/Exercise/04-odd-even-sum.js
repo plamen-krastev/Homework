@@ -1,18 +1,30 @@
 function sum(num) {
-  let numAsString = String(num);
+    let numAsString = String(num);
 
-  let result = calculation(numAsString);
-  print(result);
+    // let result = calculation(numAsString); 
+    let [evenSum, oddSum] = calculation(numAsString);
+    // print(result);
+    print(evenSum, oddSum);
 
     function calculation(str) {
 
         let oddSum = 0;
         let evenSum = 0;
 
-        for (i = 0; i < numAsString.length; i++) {
+        // for (i = 0; i < numAsString.length; i++) {
 
-            let curNum = Number(numAsString[i]);
+        //     let curNum = Number(numAsString[i]);
 
+        //     if (curNum % 2 == 0) {
+        //         evenSum += curNum;
+        //     } else {
+        //         oddSum += curNum;
+        //     }
+        // }
+
+        for (let num of str) {
+            let curNum = Number(num);
+            
             if (curNum % 2 == 0) {
                 evenSum += curNum;
             } else {
@@ -23,8 +35,9 @@ function sum(num) {
         return [oddSum, evenSum];
     }
 
-    function print(result) {
-        console.log(`Odd sum = ${result[0]}, Even sum = ${result[1]}`);
+    function print(evenSum, oddSum) {
+        // console.log(`Odd sum = ${result[0]}, Even sum = ${result[1]}`);
+        console.log(`Odd sum = ${evenSum}, Even sum = ${oddSum}`);
     }
 
 }
