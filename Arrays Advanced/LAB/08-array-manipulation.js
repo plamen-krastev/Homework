@@ -5,8 +5,6 @@ function solve(input) {
         .split(" ")
         .map(Number);
 
-    let result = [];
-
     for (let i = 0; i < input.length; i++) {
         let cur = input[i];
 
