@@ -12,7 +12,7 @@ function solve(arr) {
             let curFoot = arr[i];
 
             if (curFoot == 30) {
-              arr.splice(i, 1);
+                arr.splice(i, 1);
                 i--;
                 continue;
             }
