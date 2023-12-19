@@ -15,7 +15,6 @@ function catalogue(arr) {
         } else {
             console.log(`${fisrtLetter}\n  ${productName}: ${productPrice}`);
         }
-
         previosFisrtLetter = fisrtLetter;
     }
 }
