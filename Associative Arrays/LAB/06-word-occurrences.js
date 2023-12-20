@@ -2,8 +2,8 @@ function solve(arr) {
 
     let countWord = {};
 
+    // count word:
     for (let word of arr) {
-        // count word:
         if (countWord.hasOwnProperty(word)) {
             countWord[word] += 1;
         } else {
