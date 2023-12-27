@@ -25,6 +25,7 @@ function solve(arr) {
         A: 14
     }
 
+    // populate playersCards
     for (let playerDeck of arr) {
 
         // getting player name and player card
@@ -47,7 +48,7 @@ function solve(arr) {
         let uniqueDeck = new Set(deck);
         let deckValue = 0;
 
-        // obtain unique card
+        // obtain card power, type
         for (let card of uniqueDeck) {
             let power = card.slice(0, card.length - 1);
             let type = card.slice(card.length - 1);
