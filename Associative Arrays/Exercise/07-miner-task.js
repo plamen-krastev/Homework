@@ -15,7 +15,7 @@ function solve(arr) {
     let entries = Object.entries(resource);
 
     for (let [metal, qty] of entries) {
-      console.log(`${metal} -> ${qty}`);
+        console.log(`${metal} -> ${qty}`);
     }
 }
 

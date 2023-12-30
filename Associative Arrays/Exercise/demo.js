@@ -33,3 +33,6 @@ array.sort((a, b) => {
     return r;
 });
 console.log(...array);
+
+console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++');
+
