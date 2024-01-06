@@ -74,6 +74,9 @@ function solve(arr) {
         return totalB - totalA || a[0].localeCompare(b[0]);
     }
 
+    function compareTech(a, b) {
+        return b[1] - a[1] || a[0].localeCompare(b[0]);
+    }
     // console.log(result);
 
     for (let [name, techs] of result) {
@@ -82,9 +85,11 @@ function solve(arr) {
             total += skill;
         }
         console.log(`${name}: ${total} skill`);
-        let entriesTech =Object.entries(techs).sort((a, b) => (b[1] - a[1]));
-        
-        for (let [techName, powerSkill] of entriesTech) 
+        let sortedTech = Object
+            .entries(techs)
+            .sort(compareTech);
+
+        for (let [techName, powerSkill] of sortedTech) 
             console.log(`- ${techName} <!> ${powerSkill}`);
         }
     }
