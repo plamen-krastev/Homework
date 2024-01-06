@@ -3,7 +3,7 @@ function solve(arr) {
     // we need object in object. Create empty object:
     let travelGuide = {};
 
-    // population objects
+    // populate objects
     for (let row of arr) {
         let [country, town, cost] = row.split(' > ');
         cost = Number(cost);
