@@ -6,8 +6,6 @@ function solve(arr) {
     let days = 0;
     dayOfTheFisrtBitcoin = 0;
 
-    let exchange = bitcoinPrice / goldPrice;
-
     for (let i = 0; i < arr.length; i++) {
         let curYield = arr[i];
         let curMoney = curYield * goldPrice;
