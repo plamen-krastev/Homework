@@ -1,6 +1,6 @@
 function solve(year, month, day) {
 
-    let nextDay = new Date(year, month - 1, day + 1);
+    const nextDay = new Date(year, month - 1, day + 1);
 
     let theYear = nextDay.getFullYear();
     let theMonth = nextDay.getMonth();
