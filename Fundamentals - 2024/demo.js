@@ -1,27 +1,66 @@
-function solve(words, text) {
+function ladybugs(arr) {
 
-    words = words.split(', ');
+    let fieldSize = arr[0]; // getting field size
+    let ladybugsIndex = arr[1].split(" ").map(Number); // getting ladybugs starting positions
+    let field = []; // create field
 
-    for (let word of words) {
-        let count = word.length;
-        let starTemplate = '*'.repeat(count);
-
-        text = text.replace(starTemplate, word);
+    // populating a field:
+    for (let i = 0; i < fieldSize; i++) {
+        if (ladybugsIndex.includes(i)) {
+            field[i] = 1;
+        } else {
+            field[i] = 0;
+        }
     }
-    console.log(text);
 
+    for (let i = 2; i < arr.length; i++) {
+        let command = arr[i];
+        let commandArr = command.split(" ");
+
+        let startIndex = Number(commandArr[0]);
+        let direction = commandArr[1];
+        let flyLength = Number(commandArr[2]);
+
+        // checking if there is ladybug in the current index:
+        if (!field[startIndex]) {
+            continue;
+        }
+
+        field[startIndex] = 0; // ladybug took off
+
+        if (direction == 'left') {
+            let newIndex = startIndex - flyLength;
+
+            // checking if new index are out of range:
+            if (newIndex >= 0) {
+                while (field[newIndex] == 1) {
+                    newIndex -= flyLength;
+                }
+
+                if (newIndex >= 0) {
+                    field[newIndex] = 1;
+                }
+            }
+        }
+
+        if (direction == 'right') {
+            let newIndex = startIndex + flyLength;
+
+            // checking if new index are out of range:
+            if (newIndex < field.length) {
+                while (field[newIndex] == 1) {
+                    newIndex += flyLength;
+                }
+
+                if (newIndex < field.length) {
+                    field[newIndex] = 1;
+                }
+            }
+        }
+    }
+    console.log(field.join(" "));
 }
 
-// solve('great', 'softuni is ***** place for learning new programming languages');
-solve(
-    'great, learning',
-    'softuni is ***** place for ******** new programming languages'
-);
-
-let arr = [];
-arr[-5] = 100;
-array = [];
-console.log(arr);
-console.log(arr.length);
-console.log(array);
-console.log(array.length);
+// ladybugs([3, '0 1', '0 right 1', '2 right 1']);
+// ladybugs([3, '0 1 2', '0 right 1', '1 right 1', '2 right 1']);
+ladybugs([5, '3', '3 left 2', '1 left -2']);
