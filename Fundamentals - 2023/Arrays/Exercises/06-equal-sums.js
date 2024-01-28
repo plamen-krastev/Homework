@@ -9,12 +9,12 @@ function equalSums(arr) {
         let rightSum = 0;
 
         for (let j = i + 1; j < arr.length; j++) {
-            let curnum = arr[j];
-            rightSum += curnum;
+            let curNum = arr[j];
+            rightSum += curNum;
         }
         for (let j = i - 1; j >= 0; j--) {
-            let curnum = arr[j];
-            leftSum += curnum;
+            let curNum = arr[j];
+            leftSum += curNum;
         }
         if (leftSum == rightSum) {
             isEqual = true;
@@ -35,3 +35,4 @@ equalSums ([1, 2]);
 equalSums ([1]);
 equalSums ([1, 2, 3]);
 equalSums ([10, 5, 5, 99, 3, 4, 2, 5, 1, 1, 4]);
+equalSums ([1, 0, 0, 0]);
