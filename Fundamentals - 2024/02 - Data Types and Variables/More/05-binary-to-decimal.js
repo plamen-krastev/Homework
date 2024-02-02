@@ -3,7 +3,7 @@ function binaryToDecimal(str) {
     let arrNumbers = [128, 64, 32, 16, 8, 4, 2, 1];
     if (str.length !== 8) {
         for (i = str.length - 1; i < 7; i++) {
-            str += 0;
+            str = 0 + str;
         }
     }
     for (let i = 0; i < str.length; i++) {
@@ -17,6 +17,6 @@ function binaryToDecimal(str) {
 }
 
 binaryToDecimal('11000');
-// binaryToDecimal('11110000');
-// binaryToDecimal('11110000');
+binaryToDecimal('000110000');
+binaryToDecimal('11000000');
 // binaryToDecimal('11110001');
