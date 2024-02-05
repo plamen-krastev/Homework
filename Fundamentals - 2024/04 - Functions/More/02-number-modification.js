@@ -4,8 +4,8 @@ function numberModification(number) {
     let sum = 0;
     let isNeedToAddNumbers = true;
 
-    for (let char of numToString) {
-        let curNum = Number(char);
+    for (let digit of numToString) {
+        let curNum = Number(digit);
         sum += curNum;
         if (sum / numToString.length > 5) {
             console.log(number);
@@ -18,7 +18,7 @@ function numberModification(number) {
         numToString += 9;
         sum += 9;
     }
-    
+
     if (isNeedToAddNumbers) {
         console.log(numToString);
     }
