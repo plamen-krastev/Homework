@@ -1,6 +1,6 @@
-function sumFirstAndLast(arrayNumbers) {
-    let lastIndex = arrayNumbers.length - 1;
-    let sum = Number(arrayNumbers[0]) + Number(arrayNumbers[lastIndex]);
+function sumFirstAndLast(arr) {
+    let lastIndex = arr.length - 1;
+    let sum = Number(arr[0]) + Number(arr[lastIndex]);
     console.log(sum);
 }
 
