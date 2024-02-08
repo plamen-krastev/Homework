@@ -4,7 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-    
+
     {
       "type": "node",
       "request": "launch",
@@ -12,7 +12,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\Fundamentals - 2024\\05 - Arrays Advanced\\LAB\\04-last-k-numbers-sequence.js"
+      "program": "${workspaceFolder}\\${file}"
     }
   ]
 }
