@@ -4,10 +4,10 @@ function solve(input) {
         for (let j = 0; j < input[i].length; j++) {
             let curEl = input[i][j];
             let nextIndex = j + 1;
-            let nextEl = input[i][nextIndex];
             if (nextIndex === input[i].length) {
                 break;
             }
+            let nextEl = input[i][nextIndex];
             // console.log(curEl, nextEl);
             if (curEl === nextEl) {
                 count++;
