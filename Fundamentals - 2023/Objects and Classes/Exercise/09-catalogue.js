@@ -1,21 +1,21 @@
 function catalogue(arr) {
     arr.sort((a, b) => a.localeCompare(b));
-    let previosFisrtLetter = '';
+    let previousFirstLetter = '';
 
     for (let element of arr) {
         let curEl = element.split(' : ');
         let productName = curEl[0];
         let productPrice = Number(curEl[1]);
 
-        let fisrtLetter = productName[0];
+        let firstLetter = productName[0];
 
-        if (fisrtLetter == previosFisrtLetter) {
+        if (firstLetter == previousFirstLetter) {
             console.log(`  ${productName}: ${productPrice}`);
 
         } else {
-            console.log(`${fisrtLetter}\n  ${productName}: ${productPrice}`);
+            console.log(`${firstLetter}\n  ${productName}: ${productPrice}`);
         }
-        previosFisrtLetter = fisrtLetter;
+        previousFirstLetter = firstLetter;
     }
 }
 
