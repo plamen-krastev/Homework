@@ -10,7 +10,7 @@ function demo() {
     console.log(secondMatch);
 
     const pattern = /\d+/g; // Matches all occurrences of one or more digits
-    console.log("123 456   sadfsafsa 1".match(pattern)); // Output: ["123", "456"]
+    console.log("123 456   sadfsafsdsdsa 1".match(pattern)); // Output: ["123", "456"]
 
 }
 demo();
