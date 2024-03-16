@@ -8,5 +8,9 @@ function demo() {
     console.log(firstMatch[2]); // 123
     console.log(firstMatch);
     console.log(secondMatch);
+
+    const pattern = /\d+/g; // Matches all occurrences of one or more digits
+    console.log("123 456   sadfsafsa 1".match(pattern)); // Output: ["123", "456"]
+
 }
 demo();
