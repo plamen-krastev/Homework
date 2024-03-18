@@ -2,13 +2,12 @@ function starEnigma(data) {
     let messageCount = Number(data.shift());
     let patternStar = /[SsTtAaRr]/;
     let patternFinal = /[@](?<name>[A-Za-z]+)[^@\-!:>]*:(?<population>[0-9]+)[^@\-!:>]*!(?<type>[AD])![^@\-!:>]*->(?<army>[0-9]+)/;
-    let messages = [];
-    let attackedPlanet = 0;
-    let destroyedPlanet = 0;
+
+    let attackedPlanet = {};
+    let destroyedPlanet = {};
 
     for (let i = 0; i < messageCount; i++) {
         let curString = data[i];
-        // console.log(curString);
         let starCount = 0;
         let decryptedMessage = '';
 
@@ -23,26 +22,37 @@ function starEnigma(data) {
             let newSymbol = String.fromCharCode(curChartCode);
             decryptedMessage += newSymbol;
         }
-        // console.log(decryptedMessage);
+
         let message = patternFinal.exec(decryptedMessage);
-        // console.log(message.groups.name, message.groups.type);
-        if (message.groups.type === 'A') {
-          attackedPlanet++;
-        } else if (message.groups.type === 'D') {
-          destroyedPlanet++;
+
+        if (patternFinal.test(decryptedMessage)) {
+            if (message.groups.type === 'A') {
+                attackedPlanet[message.groups.name] = message.groups.type;
+            } else if (message.groups.type === 'D') {
+                destroyedPlanet[message.groups.name] = message.groups.type;
+            }
         }
-        let nameAndType = [message.groups.name, message.groups.type];
-        messages.push(nameAndType);
     }
-    let result = messages.sort((a, b) => a[1].localeCompare(b[1]));
-
-    for (let i = 0; i < result.length; i++) {
-
+    let finalAttachedPlanet = Object
+        .keys(attackedPlanet)
+        .sort((a, b) => a.localeCompare(b));
+    let finalDestroyedPlanet = Object
+        .keys(destroyedPlanet)
+        .sort((a, b) => a.localeCompare(b));
+    console.log(`Attacked planets: ${finalAttachedPlanet.length}`);
+    if (finalAttachedPlanet.length > 0) {
+        for (let planet of finalAttachedPlanet) {
+            console.log(`-> ${planet}`);
+        }
+    }
+    console.log(`Destroyed planets: ${finalDestroyedPlanet.length}`);
+    if (finalDestroyedPlanet.length > 0) {
+        for (let planet of finalDestroyedPlanet) {
+            console.log(`-> ${planet}`);
+        }
     }
 }
 
 starEnigma(['2', 'STCDoghudd4=63333$D$0A53333', 'EHfsytsnhf?8555&I&2C9555SR']);
 
-// starEnigma(
-//     ['3', "tt(''DGsvywgerx>6444444444%H%1B9444", 'GQhrr|A977777(H(TTTT', 'EHfsytsnhf?8555&I&2C9555SR']
-// );
+starEnigma(['3', "tt(''DGsvywgerx>6444444444%H%1B9444", 'GQhrr|A977777(H(TTTT', 'EHfsytsnhf?8555&I&2C9555SR']);
