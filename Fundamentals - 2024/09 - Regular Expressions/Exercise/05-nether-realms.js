@@ -1,8 +1,12 @@
 function netherRealms(data) {
-  let patternFloatNum = /(?<floatNum>[-+]?\d+\.\d+)/;
+  let patternFloatNum = /[-+]?\d+(\.\d+)?/;
   let demons = data.split(',');
   for (let demon of demons) {
-    console.log(demon.trim());
+    // console.log(demon.trim());
+    demon = demon.trim();
+    if (!demon.includes(' ')) {
+      console.log(demon);
+    }
   }
 }
 
