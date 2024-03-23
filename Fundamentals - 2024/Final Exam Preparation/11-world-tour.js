@@ -9,21 +9,19 @@ function worldTour(data) {
             let town = token[1];
             if (idx >= 0 && idx < stops.length) {
                 stops = stops.slice(0, idx) + town + stops.slice(idx);
-                console.log(stops);
             }
         } else if (action === 'Remove Stop') {
             let [startIdx, finalIdx] = token.map(Number);
-            if (startIdx >= 0 && finalIdx < stops.length) {
+            if (startIdx >= 0 && startIdx < stops.length && finalIdx >= 0 && finalIdx < stops.length) {
                 stops = stops.slice(0, startIdx) + stops.slice(finalIdx + 1);
             }
-            console.log(stops);
         } else if (action === 'Switch') {
-            let [curString, newString] = token;
-            while (stops.includes(curString)) {
-                stops = stops.replace(curString, newString);
+            let [oldString, newString] = token;
+            if (stops.includes(oldString)) {
+                stops = stops.replace(oldString, newString);
             }
-            console.log(stops);
         }
+        console.log(stops);
         command = data.shift();
         if (command === 'Travel') {
             console.log(`Ready for world tour! Planned stops: ${stops}`);
@@ -31,7 +29,7 @@ function worldTour(data) {
     }
 }
 
-worldTour(["Hawai::Cyprys-Greece", "Add Stop:7:Rome", "Remove Stop:11:16", "Switch:Hawai:Bulgaria", "Travel"]);
-// worldTour(
-    // ['Albania:Bulgaria:Cyprus:Deuchland', 'Add Stop:3:Nigeria', 'Remove Stop:4:8', 'Switch:Albania: Azərbaycan', 'Travel']
-// );
+  worldTour(["Hawai::Cyprys-Greece", "Add Stop:7:Rome", "Remove Stop:11:16", "Switch:Hawai:Bulgaria", "Travel"]);
+  // worldTour(
+  //     ['Albania:Bulgaria:Cyprus:Deuchland', 'Add Stop:3:Nigeria', 'Remove Stop:4:8', 'Switch:Albania: Azərbaycan', 'Travel']
+  // );
