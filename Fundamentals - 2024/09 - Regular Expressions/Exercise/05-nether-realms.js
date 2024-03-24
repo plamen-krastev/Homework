@@ -29,7 +29,7 @@ function netherRealms(data) {
             demonsArray.push(curDemon);
         }
     }
-    demonsArray.sort((a, b) => a[0][0].localeCompare(b[0][0]));
+    demonsArray.sort();
     for (let [name, health, damage] of demonsArray) {
         console.log(`${name} - ${health} health, ${damage.toFixed(2)} damage`);
     }
@@ -38,3 +38,4 @@ function netherRealms(data) {
 netherRealms('M3ph-0.5s-0.5t0.0**');
 netherRealms('M3ph1st0**, Azazel');
 netherRealms('Gos/ho');
+netherRealms('M3ph-0.5s-0.5t0.0**   , M2ph-0.5s-0.5t0.0**');
