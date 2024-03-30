@@ -1,42 +1,43 @@
 function solve(data) {
-    let string = data[0];
+  let string = data[0];
 
-    let digitPattern = /\d+/g;
-    let emojiPattern = /(::|\*\*)(?<emoji>[A-Z][a-z]{2,})\1/g;
+  let digitPattern = /\d+/g;
+  let emojiPattern = /(::|\*\*)(?<emoji>[A-Z][a-z]{2,})\1/g;
 
-    let digitMatch = string.match(digitPattern);
-    let digitAsString = digitMatch.join('');
+  let digitMatch = string.match(digitPattern);
+  let digitAsString = digitMatch.join('');
 
-    let coolThresholdSum = 1;
+  let coolThresholdSum = 1;
 
-    for (let digit of digitAsString) {
-        digit = Number(digit);
-        coolThresholdSum *= digit;
-    }
+  for (let digit of digitAsString) {
+      digit = Number(digit);
+      coolThresholdSum *= digit;
+  }
 
-    let emojiArray = [];
-    let emojiMatch = emojiPattern.exec(string);
-    while (emojiMatch !== null) {
-        // emoji = { Name: coolness };
-        let emoji = emojiMatch.groups.emoji;
-        let sum = 0;
-        for (let symbol of emoji) {
-            let num = symbol.charCodeAt();
-            sum += num;
-        }
-        let emojiObject = {
-            [emoji]: sum
-        };
-        emojiArray.push(emojiObject);
-        emojiMatch = emojiPattern.exec(string);
-    }
-    console.log(`Cool threshold: ${coolThresholdSum}`);
-    console.log(
-        `${emojiArray.length} emojis found in the text. The cool ones are:`
-    );
-    for (let emoji of emojiArray) {
-      console.log(emoji);
-    }
+  let emojiArray = [];
+  let emojiMatch = string.match(emojiPattern);
+  for (let emoji of emojiMatch) {
+      let sum = 0;
+      for (let i = 2; i < emoji.length - 2; i++) {
+          let num = emoji[i].charCodeAt();
+          sum += num;
+      }
+      let emojiObject = {
+          [emoji]: sum
+      };
+      emojiArray.push(emojiObject);
+  }
+  console.log(`Cool threshold: ${coolThresholdSum}`);
+  console.log(
+      `${emojiArray.length} emojis found in the text. The cool ones are:`
+  );
+  for (let emoji of emojiArray) {
+      let emojiKey = Object.keys(emoji);
+      let emojiValue = Object.values(emoji);
+      if (emojiValue[0] > coolThresholdSum) {
+          console.log(emojiKey.join(''));
+      }
+  }
 }
 
 solve(["In the Sofia Zoo there are 311 animals in total! ::Smiley:: This includes 3 **" +
