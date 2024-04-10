@@ -1,6 +1,6 @@
 function solve(data) {
     let result = [];
-    let biggerNum = Number.MIN_SAFE_INTEGER;
+    let biggerNum = data[0];
     for (let i = 0; i < data.length; i++) {
         let curNum = data[i];
         if (result.length === 0) {
