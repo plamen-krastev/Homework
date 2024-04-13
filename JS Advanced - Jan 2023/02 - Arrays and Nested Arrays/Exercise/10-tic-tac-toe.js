@@ -12,7 +12,7 @@ function solve(data) {
 
   for (let i = 0; i < data.length; i++) {
     let [rowIdx, colIdx] = data[i].split(" ").map((x) => Number(x));
-    if (rowIdx >= 0 && rowIdx < 3 && colIdx >= 0 && colIdx < 3) {
+    // if (rowIdx >= 0 && rowIdx < 3 && colIdx >= 0 && colIdx < 3) {
       if (counter % 2 === 0) {
         // player X turn
         if (!initiateDashboard[rowIdx][colIdx]) {
@@ -111,14 +111,14 @@ function solve(data) {
       }
 
       // check - is all field are full:
-      let isFieldsFull = fieldsArr.every((el) => el !== false);
+      let isFieldsFull = fieldsArr.every(el => el !== false);
       if (isFieldsFull) {
         console.log("The game ended! Nobody wins :(");
         break;
       }
-    } else {
-      continue;
-    }
+    // } else {
+    //   continue;
+    // }
   }
   for (let row of initiateDashboard) {
     console.log(row.join("\t"));
@@ -130,3 +130,5 @@ solve(["0 1", "0 0", "0 2", "2 0", "1 0", "1 1", "1 2", "2 2", "2 1", "0 0"]);
 solve(["0 0", "0 0", "1 1", "0 1", "1 2", "0 2", "2 2", "1 2", "2 2", "2 1"]);
 
 solve(["0 1", "0 0", "0 2", "2 0", "1 0", "1 2", "1 1", "2 1", "2 2", "0 0"]);
+
+solve(["1 0", "0 2", "0 1", "2 0", "1 2", "1 1", "1 2", "2 2", "2 1", "0 0"]);
