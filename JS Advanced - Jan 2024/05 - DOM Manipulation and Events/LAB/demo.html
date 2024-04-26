@@ -5,16 +5,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo</title>
+  <style>
+    .orange {
+      background-color: orange;
+      padding: 15px;
+    }
+
+    .green {
+      background-color: green;
+      padding: 15px;
+    }
+
+    .yellow {
+      background-color: yellow;
+      padding: 15px;
+    }
+  </style>
 </head>
 
 <body>
   <button id="my-button">Click me!</button>
+  <div class="orange">
+    <div class="green">
+      <div class="yellow">Nested Div</div>
+    </div>
+  </div>
   <script>
     const button = document.getElementById("my-button");
     function handlerClicks() {
       alert("Button clicked!");
     }
+
     button.addEventListener("click", handlerClicks);
+
+    setTimeout(() => {
+      button.removeEventListener("click", handlerClicks);
+      alert("Event listener removed!");
+    }, 5000);
+
+    const divElements = document.querySelectorAll("div");
+    divElements.forEach(el => el.addEventListener("click", logText));
+
+    function logText(e) {
+      console.log(this, "clicked");
+    }
+
   </script>
 </body>
 
