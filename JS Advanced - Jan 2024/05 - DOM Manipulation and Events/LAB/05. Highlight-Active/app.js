@@ -1,8 +1,8 @@
 function focused() {
-  let divRef = document.querySelectorAll("div div");
+  let divRef = Array.from(document.querySelectorAll("div div"));
   for (let div of divRef) {
-    div.addEventListener("mouseover", highlight);
-    div.addEventListener("mouseout", clearHighlight);
+    div.addEventListener("focus", highlight);
+    div.addEventListener("blur", clearHighlight);
   }
   function highlight(even) {
     even.currentTarget.classList.toggle("focused");

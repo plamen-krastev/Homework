@@ -1,56 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo</title>
-  <style>
-    .orange {
-      background-color: orange;
-      padding: 15px;
-    }
-
-    .green {
-      background-color: green;
-      padding: 15px;
-    }
-
-    .yellow {
-      background-color: yellow;
-      padding: 15px;
-    }
-  </style>
+  <title>Focus and Blur Events</title>
 </head>
-
 <body>
-  <button id="my-button">Click me!</button>
-  <div class="orange">
-    <div class="green">
-      <div class="yellow">Nested Div</div>
-    </div>
-  </div>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name">
+
+  <p id="message"></p>
+
   <script>
-    const button = document.getElementById("my-button");
-    function handlerClicks() {
-      alert("Button clicked!");
-    }
+    const inputField = document.getElementById("name");
+    const messageParagraph = document.getElementById("message");
 
-    button.addEventListener("click", handlerClicks);
+    // Event listener for focus event
+    inputField.addEventListener("focus", function() {
+      messageParagraph.textContent = "Input field focused";
+    });
 
-    setTimeout(() => {
-      button.removeEventListener("click", handlerClicks);
-      alert("Event listener removed!");
-    }, 5000);
-
-    const divElements = document.querySelectorAll("div");
-    divElements.forEach(el => el.addEventListener("click", logText));
-
-    function logText(e) {
-      console.log(this, "clicked");
-    }
-
+    // Event listener for blur event
+    inputField.addEventListener("blur", function() {
+      messageParagraph.textContent = "Input field blurred";
+    });
   </script>
-</body>
 
+</body>
 </html>
