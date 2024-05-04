@@ -25,7 +25,7 @@ function create(words) {
     let children = target.children;
     // getting child (p element)
     let p = children[0];
-   //  p.style.display = "block"; // as per condition
-   p.style.display = p.style.display === "none" ? "block" : "none";
+    //  p.style.display = "block"; // as per condition
+    p.style.display = p.style.display === "none" ? "block" : "none";
   }
 }
