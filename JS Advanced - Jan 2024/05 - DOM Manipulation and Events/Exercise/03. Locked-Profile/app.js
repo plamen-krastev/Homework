@@ -1,6 +1,6 @@
 function lockedProfile() {
-  let buttons = Array.from(document.querySelectorAll("button")); // buttons array
-  buttons.forEach((x) => x.addEventListener("click", clickHandler)); // add listener
+  let buttons = Array.from(document.querySelectorAll("button")); // array of buttons
+  buttons.forEach((x) => x.addEventListener("click", clickHandler)); // added listener on each button
 
   function clickHandler(event) {
     let target = event.currentTarget; // getting clicked button
