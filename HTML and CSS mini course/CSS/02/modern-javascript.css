@@ -1,0 +1,14 @@
+/* 5BC0DE */
+header,
+main,
+footer {
+  background-color: #5BC0DE;
+}
+
+ul {
+  margin-bottom: 1px;
+}
+
+footer {
+  padding-top: 15px;
+}
