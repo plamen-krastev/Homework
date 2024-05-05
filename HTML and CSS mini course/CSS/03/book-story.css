@@ -1,0 +1,13 @@
+main {
+  border-style: solid;
+  background-color: #DDDDDD;
+  padding: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: left;
+}
