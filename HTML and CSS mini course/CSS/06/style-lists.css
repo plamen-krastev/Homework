@@ -11,6 +11,11 @@
   font-size: xx-large;
   color: white;
   text-decoration: underline;
+  letter-spacing: 3px;
+}
+
+body {
+  background-color: #EDEDED;
 }
 
 div {
