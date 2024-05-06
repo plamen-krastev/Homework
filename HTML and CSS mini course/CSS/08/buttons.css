@@ -1,0 +1,34 @@
+body {
+  background-color: lightgrey;
+  font-family: Helvetica, sans-serif, Arial;
+}
+
+button {
+  padding: 5px 14px;
+  border-radius: 16px;
+  border: 2px solid #333333;
+  background-color: transparent;
+}
+
+.filled button {
+  background-color: #333333;
+  color: white;
+}
+
+.icon button {
+  background-color: #333333;
+  color: white;
+
+}
+
+.icon button img {
+  padding-right: 5px;
+  width: 12px;
+  margin-right: 3px;
+}
+
+.icon button:hover {
+  background-color: #006500;
+  border: 2px solid #006500;
+  cursor: pointer;
+}
