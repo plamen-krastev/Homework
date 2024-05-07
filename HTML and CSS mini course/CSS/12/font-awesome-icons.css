@@ -1,0 +1,49 @@
+main {
+  padding: 20px;
+}
+
+footer {
+  padding: 20px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.nav-links {
+  background-color: #F5F5F5;
+  border: solid 1px darkgray;
+  width: 200px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #C83025;
+}
+
+.nav-links i {
+  display: inline-block;
+  margin: 3px 0px;
+  padding-right: 10px;
+}
+
+.checkout {
+  background-color: #83A94C;
+  border: solid 1px #6C9038;
+  color: white;
+  padding: 5px;
+}
+
+.info {
+  background-color: #008ED0;
+  border: solid 1px #0078B6;
+  color: white;
+  padding: 5px;
+}
+
+.delete {
+  background-color: #CC4036;
+  border: solid 1px #B32E25;
+  color: white;
+  padding: 5px;
+}
