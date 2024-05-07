@@ -1,0 +1,11 @@
+body {
+  padding: 15px;
+}
+
+section {
+  background-color: #336699;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-indent: 30px;
+}
