@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital,wght@0,100..900;1,100..900&family=Abel&display=swap');
+
+body {
+  background-color: #8B0000;
+  text-align: center;
+}
+
+section h1 {
+  color: white;
+  font-family: Abel;
+  text-transform: uppercase;
+  font-size: xx-large;
+}
+
+section h2 {
+  color: #DFBF84;
+  text-transform: uppercase;
+}
+
+section p {
+  color: white;
+  font-family: Raleway;
+}
