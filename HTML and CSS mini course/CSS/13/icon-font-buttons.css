@@ -1,0 +1,21 @@
+.click {
+  background-color: #008000;
+  border: solid 1px #008000;
+  color: white;
+  padding: 5px 15px;
+  margin: 5px 10px;
+  border-radius: 5px;
+}
+
+.email {
+  background-color: #FFA500;
+  border: solid 1px #FFA500;
+  color: white;
+  padding: 5px 15px;
+  margin: 5px 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
