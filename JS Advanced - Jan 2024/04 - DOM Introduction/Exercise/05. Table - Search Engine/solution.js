@@ -12,6 +12,8 @@ function solve() {
         if (cell.textContent.includes(searchText)) {
           row.classList.add("select");
           break;
+        } else {
+          row.classList.remove("select");
         }
       }
     }

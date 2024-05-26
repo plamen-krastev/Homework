@@ -38,8 +38,8 @@ function cookingByNumbers(
   };
 
   for (let i = 1; i <= 5; i++) {
-    let curOperation = actions["operator" + i];
-    num = actions[curOperation](num);
+    let curOperator = actions["operator" + i];
+    num = actions[curOperator](num);
     console.log(num);
   }
 }
