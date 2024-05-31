@@ -1,14 +1,13 @@
 // Object destructuring
-const obj = { a: 1, b: 2, c: 3, d: 4 };
+const obj = { a: 1, b: 2, c: 3 };
 const { c, ...props } = obj;
 const modifiedObj = {
-  ...props,
-  c: 12,
+...props,
+c, d: 12
 };
 console.log(obj); // { a: 1, b: 2, c: 3, d: 4 }
-console.log(modifiedObj); // { a: 1, b: 2, d: 12, c: 12 }
-modifiedObj.f = 18;
-console.log(modifiedObj);
+console.log({...props}, {c});
+console.log(modifiedObj); // { a: 1, b: 2, c: 3, d: 12 }
 
 console.log("\n##########################\n");
 
