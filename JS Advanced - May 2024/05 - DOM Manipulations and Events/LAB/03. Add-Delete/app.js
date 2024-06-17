@@ -11,7 +11,7 @@ function addItem() {
   ulElement.appendChild(liElement);
   document.querySelector("#newItemText").value = "";
 
-  // create "a" element, adding text for it, adding link for it, append it to the "li" element end set listener for it
+  // create "a" element, adding text for it, adding link for it, append it to the "li" element end add event listener for it
   const aElement = document.createElement("a");
   const aElementText = document.createTextNode("[Delete]");
   aElement.href = "#";
