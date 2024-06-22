@@ -25,8 +25,8 @@ function solve() {
   }
 
   function checkoutOrder(e) {
-    let uniqueSet = new Set(products);
-    const productList = Array.from(uniqueSet);
+    let uniqueProduct = new Set(products);
+    const productList = Array.from(uniqueProduct);
 
     textAreaRef.textContent += `You bought ${productList.join(", ")} for ${totalPrice.toFixed(2)}.`;
 
